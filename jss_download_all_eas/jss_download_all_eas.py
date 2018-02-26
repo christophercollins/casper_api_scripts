@@ -92,7 +92,7 @@ def write_scripts(jss_url, api_user, api_pass, write_path, scripts):
         script_text = base64.b64decode(script_data.find('script_contents_encoded').text)
         print "Writing {}".format(script_name)
         write_file(final_write_path, script_name, script_text)
-        print "Wrote {}".format(final_write_path + '/' + script_name + '.sh')
+        print "Wrote {}".format(final_write_path + '/' + script_name + '.txt')
 
         
         
@@ -118,7 +118,7 @@ def write_file(path, name, text):
     """
     Write script content to a file.
     """
-    file = open(os.path.join(path, name + '.sh'), 'w')
+    file = open(os.path.join(path, name + '.txt'), 'w')
     file.write(text)
     file.close()
         
